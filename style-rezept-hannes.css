@@ -89,7 +89,7 @@ header img {
 }
 
 .informations-zeit {
-    background-image: url(./img/icons/clock-regular.svg);
+    background-image: url(./img/clock-regular.svg);
     background-color: #efefef;
     border-radius: 5px;
     background-repeat: no-repeat;
@@ -102,7 +102,7 @@ header img {
 }
 
 .informations-kcal {
-    background-image: url(./img/icons/brain-solid.svg);
+    background-image: url(./img/brain-solid.svg);
     background-color: #efefef;
     border-radius: 5px;
     background-repeat: no-repeat;
@@ -115,7 +115,7 @@ header img {
 }
 
 .informations-datum {
-    background-image: url(./img/icons/calendar-alt-regular.svg);
+    background-image: url(./img/calendar-alt-regular.svg);
     background-color: #efefef;
     border-radius: 5px;
     background-repeat: no-repeat;

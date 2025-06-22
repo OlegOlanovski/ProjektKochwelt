@@ -7,8 +7,8 @@ const ingredients = {
   oel:              { amount:  36, unit: "ml"    },
   sojasauce:        { amount:  78, unit: "g"     },
   sambal:           { amount: 100, unit: "g"     },
-  paprikapulver:    { amount: 20, unit: "g"     },
-  currypulver:      { amount: 20, unit: "g"     },
+  paprikapulver:    { amount:  20, unit: "g"     },
+  currypulver:      { amount:  20, unit: "g"     },
   chilipulver:      { amount:  10, unit: "g"     },
   gefluegelfleisch: { amount: 200, unit: "g"     },
 };
@@ -28,5 +28,14 @@ form.addEventListener("submit", event => {
   Object.entries(ingredients).forEach(([key, { amount, unit }]) => {
     const result = (amount / BASE_PORTIONS) * portions;
     document.getElementById(key).textContent = `${result.toFixed(2)} ${unit}`;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const burgerMenu = document.querySelector(".burger-menu");
+  const nav = document.querySelector(".main-nav");
+
+  burgerMenu.addEventListener("click", function () {
+    nav.classList.toggle("show");
   });
 });

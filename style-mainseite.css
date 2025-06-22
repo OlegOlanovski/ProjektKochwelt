@@ -18,6 +18,13 @@ header {
 
 header img {
   width: 200px;
+  
+}
+.zoom-img {
+  transition: transform 0.3s ease;
+}
+.zoom-img:hover {
+  transform: scale(1.2);
 
 }
 
@@ -94,83 +101,49 @@ h2 {
   right: 510px;
 }
 
-
-@media (min-width: 350px) and (max-width: 1440px) {}
-
-.croissantdiv {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 32px;
-  padding: 50px 200px 30px 370px;
-  margin-top: 70px;
-}
-
-.croissantdiv img {
-  width: 400px;
-  height: 250px;
-  object-fit: fill;
-  object-position: center;
-  border-radius: 10px;
-}
-
-.croissant-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.Französische {
-  margin: 0;
-}
-
-.croissant-body {
-  margin: 0;
-  font-weight: 600;
-}
-
-.Rezept-offnen {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  width: 200px;
-  margin: 0;
-  margin-top: 50px;
-}
-
-
-@media (max-width: 1024px) and (min-width: 600px) {
-  .croissantdiv {
-    padding: 30px 50px;
+ @media (max-width: 1290px)  {
+ .croissantdiv {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    padding-right: 50px ;
+    padding-left: 50px;
     gap: 24px;
   }
 
   .croissantdiv img {
-    width: 50%;
-    height: auto;
-    max-width: 300px;
+    width: 100% ;
+    height: auto ;
+    max-width: 400px
+
   }
 
   .croissant-content {
+    display: flex;
+    flex-direction: column;    
+    gap: 20px;                 
+  }
+
+  .Französische {
+    margin: 0;                 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 16px;
   }
 
   .Rezept-offnen {
-    width: 150px;
-    margin-top: 30px;
+    width: 100% ;
+    max-width: 300px;
+    margin-top: 20px;
   }
 }
 
-
-@media (max-width: 767px) and (min-width: 350px) {
+/* Mobile (max-width: 600px) */
+@media (max-width: 600px) {
   .croissantdiv {
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     gap: 20px;
   }
 
@@ -190,8 +163,34 @@ h2 {
     width: 100%;
     max-width: 300px;
     margin-top: 20px;
+    
   }
 }
+
+  /* Mobile (up to 767px) */
+  @media (max-width: 767px) and (min-width: 350px) {
+    .croissantdiv {
+      flex-direction: column;   
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .croissantdiv img {
+      width: 100%;
+      height: auto;
+      max-width: none;
+    }
+    .croissant-content {
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+    }
+    .Rezept-offnen {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 20px;
+    }
+  }
 
 /* =================== Content-Begrenzung ======================= */
 .wrapper-container {
@@ -308,7 +307,7 @@ footer {
   justify-content: space-around;
   background-color: grey;
   height: 100px;
-  margin-top: 100px;
+  margin-top: 255px;
 
 }
 
