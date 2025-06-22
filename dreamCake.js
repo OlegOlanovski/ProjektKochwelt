@@ -19,6 +19,8 @@ function aktualisiereZutaten() {
     });
   }
 
+
+  
   // Optional: Enter-Taste aktivieren
   document.getElementById('portionen').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {

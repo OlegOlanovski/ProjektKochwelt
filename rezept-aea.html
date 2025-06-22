@@ -16,13 +16,20 @@
 
   <!-- Header -->
   <header>
-    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+    <img src="./img/logo.png" alt="Logo">
+    <!-- Hamburger Button -->
+  <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
 
-    <nav>
+    <nav  id="main-nav">
       <a class="navlink" href="index.html">Start</a>
       <a class="navlink" href="./nudeln.html">Rezept des Tages</a>
       <a class="navlink" href="kontakt.html">Kontakt</a>
       <a class="navlink" href="impressum.html">Impressum</a>
+      
     </nav>
   </header>
 
@@ -93,18 +100,76 @@
   </footer>
 
   <!-- Script zur Portionsanpassung -->
-  <script>
-    function aktualisiereZutaten() {
-      const portionen = parseInt(document.getElementById('portionen').value);
-      const zutaten = document.querySelectorAll('#zutaten li');
-      zutaten.forEach(li => {
-        const basis = parseFloat(li.dataset.basis);
-        const einheit = li.dataset.einheit;
-        const neu = basis * portionen / 4;
-        li.textContent = `${Math.round(neu * 100) / 100} ${einheit}`;
-      });
-    }
-  </script>
+<script>
+function aktualisiereZutaten() {
+  const portionenInput = document.getElementById('portionen');
+  let portionen = parseFloat(portionenInput.value.replace(',', '.'));
+
+  // Ungültige Eingabe? => Setze Portionen auf 1
+  if (isNaN(portionen) || portionen < 1) {
+    portionen = 1;
+  }
+
+  // Eingabefeld korrigieren
+  portionenInput.value = portionen;
+
+  const zutaten = document.querySelectorAll('#zutaten li');
+  zutaten.forEach(li => {
+    const basis = parseFloat(li.dataset.basis);
+    const einheit = li.dataset.einheit;
+    const neu = basis * portionen / 4;
+    const formatiert = Number.isInteger(neu) ? neu : neu.toFixed(2).replace('.', ',');
+    li.textContent = `${formatiert} ${einheit}`;
+  });
+}
+
+// Enter-Taste: Portionen aktualisieren
+document.getElementById('portionen').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    aktualisiereZutaten();
+  }
+});
+
+// Hamburger-Menü-Logik
+const hamburger = document.querySelector('.hamburger');
+const nav = document.getElementById('main-nav');
+const body = document.body;
+let isMenuOpen = false;
+
+function openMenu() {
+  hamburger.classList.add('open');
+  nav.classList.add('open');
+  body.classList.add('menu-open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  isMenuOpen = true;
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  nav.classList.remove('open');
+  body.classList.remove('menu-open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  isMenuOpen = false;
+}
+
+function toggleMenu() {
+  isMenuOpen ? closeMenu() : openMenu();
+}
+
+hamburger.addEventListener('click', toggleMenu);
+
+body.addEventListener('click', e => {
+  if (isMenuOpen && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+    closeMenu();
+  }
+});
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+</script>
+
+
 
 </body>
 </html>
