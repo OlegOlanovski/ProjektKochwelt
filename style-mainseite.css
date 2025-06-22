@@ -215,8 +215,8 @@ h2 {
 .wok-div {
   display: flex;
   flex-direction: column;
-  padding-left: 150px;
-  padding-right: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
   padding-bottom: 50px;
   gap: 32px;
 }
@@ -266,7 +266,7 @@ footer {
   justify-content: space-around;
   background-color: grey;
   height: 100px;
-  margin-top: 255px;
+  margin-top: 60px;
 
 }
 
