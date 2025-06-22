@@ -231,6 +231,104 @@ footer {
     padding-right: 100px;
   }
 }
+/* Basis-Stil für den Button - erstmal ausblenden */
+/* Basis Hamburger-Button: drei Striche */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger sichtbar ab 1030px und kleiner */
+@media (max-width: 1030px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    
+      visibility: hidden;
+    
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 225px;
+    background-color: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+    padding: 60px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+  }
+  .hamburger.open {
+    
+  z-index: 1000; /* kleiner als nav */
+}
+
+
+  nav.open {
+    transform: translateX(0);
+     visibility: visible;
+  }
+
+  nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff6600;
+  }
+
+  /* Hamburger Animation beim Öffnen */
+  .hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Optional: Overlay hinter Menü */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1040;
+  }
+}
+
+
+
 
 /* ≤ 1024px: Tablets quer oder kleine Laptops */
 @media (max-width: 1024px) {
@@ -379,3 +477,18 @@ footer {
     font-size: 13px;
   }
 }
+
+
+body.menu-open::before {
+  z-index: 900; /* kleiner als nav */
+}
+
+nav {
+  z-index: 1050;
+}
+
+nav a {
+  color: #333 !important;  /* dunkle Farbe sicherstellen */
+}
+
+
