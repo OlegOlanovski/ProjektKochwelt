@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gebratene Nudeln</title>
@@ -93,8 +92,7 @@
     }
 
     table {
-      border-collapse: separate;
-      border-spacing: 8px 4px;
+      border-collapse: collapse;
       width: 100%;
     }
 
@@ -109,8 +107,9 @@
     }
 
     td {
-      padding: 15px 50px;
-      background-color: #ada9a9;
+      padding: 12px 16px;
+      background-color: white;
+      border: none;
     }
 
     tr:nth-child(odd) td {
@@ -148,141 +147,295 @@
       color: #585050;
     }
 
-.info-item {
+    .main-nav {
+      display: flex;
+      gap: 16px;
+    }
+
+    .main-nav.show {
+      display: flex;
+    }
+
+    .burger-menu {
+      display: none;
+      cursor: pointer;
+      font-size: 20px;
+      color: #333;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: grey;
+      height: 100px;
+      margin-top: 160px;
+    }
+
+    .footer-img {
+      width: 250px;
+      height: auto;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 16px;
+      position: absolute;
+      box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    header img {
+      width: 200px;
+    }
+
+    .navlink {
+      text-decoration: none;
+      color: #606060;
+    }
+
+    h2 {
+      margin-top: 60px;
+    }
+
+    .navlink:hover {
+      color: green;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 7px;
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 8px 4px;
+    }
+
+    table td {
+      padding: 15px 50px;
+      background-color: #ada9a9;
+    }
+
+    @media (min-width: 601px) and (max-width: 1024px) {
+      .title {
+        padding-left: 10%;
+        margin-top: 150px;
+      }
+
+      .recipe-image {
+        width: 80%;
+        height: auto;
+      }
+
+      .info-list {
+        padding-left: 10%;
+        margin: 20px 0;
+      }
+
+      .form-container {
+        gap: 20px;
+      }
+
+      .instructions {
+        padding: 0 10% 0 12%;
+      }
+
+      .section-subtitle,
+      .profile-avatar {
+        padding-left: 10%;
+      }
+
+      .content-container {
+        width: 80%;
+        padding: 16px;
+      }
+
+      table td {
+        padding: 10px 20px;
+      }
+
+      header img {
+        width: 180px;
+      }
+
+      footer {
+        margin-top: 120px;
+      }
+
+      .footer-img {
+        width: 200px;
+      }
+
+      .social-icons {
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        padding-left: 5%;
+        margin-top: 120px;
+      }
+
+      .recipe-image {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+      .info-list {
+        flex-direction: column;
+        padding-left: 5%;
+        margin: 16px 0;
+      }
+
+      .info-item {
+        margin: 8px 0;
+      }
+
+      .content-container {
+        width: 90%;
+        padding: 12px;
+      }
+
+      .form-container {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 5%;
+      }
+
+      .instructions {
+        padding: 0 5%;
+      }
+
+      .section-subtitle,
+      .profile-avatar {
+        padding-left: 5%;
+      }
+
+      .profile {
+        flex-direction: column;
+        padding-left: 5%;
+      }
+
+      .profile-avatar {
+        width: 80px;
+        height: 80px;
+      }
+
+      table {
+        border-spacing: 4px 4px;
+      }
+
+      table td {
+        padding: 8px 12px;
+      }
+
+      header img {
+        width: 150px;
+      }
+
+      footer {
+        flex-direction: column;
+        height: auto;
+        margin-top: 80px;
+      }
+
+      .social-icons {
+        gap: 16px;
+      }
+
+      .footer-img {
+        display: none;
+      }
+
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 60px;
+        right: 16px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        border-radius: 8px;
+        gap: 10px;
+      }
+
+      .main-nav.show {
+        display: flex;
+      }
+
+      .burger-menu {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+    <div class="burger-menu">☰ Menü</div>
+    <nav class="main-nav">
+      <a class="navlink" href="./index.html">Start</a>
+      <a class="navlink" href="#">Rezept des Tages</a>
+      <a class="navlink" href="./kontakt.html">Kontakt</a>
+      <a class="navlink" href="./impressum.html">Impressum</a>
+    </nav>
+  </header>
+
+  <!-- Rest of your content (unchanged) -->
+
+  
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gebratene Nudeln</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="./img/logo_small.png" />
+
+  <style>
+  html, body { margin: 0; padding: 0; }
+
+  .main-nav {
     display: flex;
-    align-items: center;
-    background-color: #EFEFEF;
-    padding: 6px 10px;
-    border-radius: 8px;
-    margin-left: 20px;
-    font-size: 14px;
-}
+    gap: 16px;
+  }
 
-.info-item img {
-    width: 20px;
-    height: 20px;
-    margin-right: 8px;
-}
-
-.content-container {
-    max-width: 1650px;
-    width: 64%;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-}
-
-.form-container {
+  .main-nav.show {
     display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 20px;
-}
+  }
 
-.portion-form input {
-    width: 60px;
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.portion-form__button {
-    background-color: green;
-    color: white;
-    padding: 6px 14px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-bottom: 17px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-tr td:first-child {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-
-tr td:last-child {
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-td {
-    padding: 12px 16px;
-    background-color: white;
-    border: none;
-}
-
-tr:nth-child(odd) td {
-    background-color: #f0f0f0;
-}
-
-.instructions {
-    display: flex;
-    justify-content: center;
-    text-align: left;
-    padding: 0 15% 0 18%;
-}
-
-.section-subtitle {
-    padding-left: 18%;
-}
-
-.profile-avatar {
-    width: 100px;
-    height: 100px;
-    padding-left: 18%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.profile {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.profile-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: #585050;
-}
-
-.main-nav {
+  .burger-menu {
     display: none;
-}
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+  }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: grey;
-    height: 100px;
-    margin-top: 160px;
-}
-
-.footer-img {
-    width: 250px;
-    height: auto;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-}
-
-.social-icons a img {
-    width: 32px;
-    height: 32px;
-}
-
-header {
+  header {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -292,234 +445,183 @@ header {
     top: 0;
     left: 0;
     right: 0;
-}
+  }
 
-header img {
+  header img {
     width: 200px;
-}
+  }
 
-.navlink {
+  .navlink {
     text-decoration: none;
-    margin-left: 16px;
     color: #606060;
-}
+  }
 
-h2 {
-    margin-top: 60px;
-}
-
-.navlink:hover {
+  .navlink:hover {
     color: green;
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 7px;
-}
+  }
 
-/* === TABLET (601px to 1024px) === */
-@media (min-width: 601px) and (max-width: 1024px) {
-    .title {
-        padding-left: 10%;
-        margin-top: 150px;
+  @media (max-width: 600px) {
+    .main-nav {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      top: 60px;
+      right: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      padding: 0 10px;
+      border-radius: 8px;
+      gap: 10px;
     }
-    .recipe-image {
-        width: 80%;
-        height: auto;
-    }
-    .info-list {
-        padding-left: 10%;
-        margin: 20px 0;
-    }
-    .form-container {
-        gap: 20px;
-    }
-    .instructions {
-        padding: 0 10% 0 12%;
-    }
-    .section-subtitle,
-    .profile-avatar {
-        padding-left: 10%;
-    }
-    .content-container {
-        width: 80%;
-        padding: 16px;
-    }
-    table td {
-        padding: 10px 20px;
-    }
-    header img {
-        width: 180px;
-    }
-    footer {
-        margin-top: 120px;
-    }
-    .footer-img {
-        width: 200px;
-    }
-    .social-icons {
-        gap: 24px;
-    }
-}
 
-/* === MOBILE (up to 600px) === */
-@media (min-width: 350px) and (max-width: 600px) {
-    .title {
-        padding-left: 5%;
-        margin-top: 120px;
+    .main-nav.show {
+      max-height: 500px;
+      padding: 10px;
     }
-    .recipe-image {
-        width: 90%;
-        height: auto;
-        margin-bottom: 20px;
+
+    .burger-menu {
+      display: block;
     }
-    .info-list {
-        flex-direction: column;
-        padding-left: 5%;
-        margin: 16px 0;
-    }
-    .info-item {
-        margin: 8px 0;
-    }
-    .content-container {
-        width: 90%;
-        padding: 12px;
-    }
-    .form-container {
-        flex-direction: column;
-        gap: 10px;
-        padding-left: 5%;
-    }
-    .instructions {
-        padding: 0 5%;
-    }
-    .section-subtitle,
-    .profile-avatar {
-        padding-left: 5%;
-    }
-    .profile {
-        flex-direction: column;
-        padding-left: 5%;
-    }
-    .profile-avatar {
-        width: 80px;
-        height: 80px;
-    }
-    table {
-        border-spacing: 4px 4px;
-    }
-    table td {
-        padding: 8px 12px;
-    }
+
     header img {
-        width: 150px;
+      width: 150px;
     }
-    footer {
-        flex-direction: column;
-        height: auto;
-        margin-top: 80px;
-    }
-    .social-icons {
-        gap: 16px;
-    }
-}
-    </style>
+  }
+</style>
+
+</head>
+
 <body>
+  <header>
+    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+    <div class="burger-menu">☰ Menü</div>
+    <nav class="main-nav">
+      <a class="navlink" href="./index.html">Start</a>
+      <a class="navlink" href="#">Rezept des Tages</a>
+      <a class="navlink" href="./kontakt.html">Kontakt</a>
+      <a class="navlink" href="./impressum.html">Impressum</a>
+    </nav>
+  </header>
 
-    
+    <h2 class="title">Gebratene Nudeln</h2>
+    <img class="recipe-image" src="./img/hauptbild.jpg" alt="Gebratene Nudeln">
 
-    <header>
-        <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-        <nav class="display-none-header">
-            <a class="navlink" href="./index.html">Start</a>
-            <a class="navlink" href="#">Rezept des Tages</a>
-            <a class="navlink" href="./kontakt.html">Kontakt</a>
-            <a class="navlink" href="./impressum.html">Impressum</a>
-        </nav>
-    </header>
-  
-  <h2 class="title">Gebratene Nudeln</h2>
-  <img class="recipe-image" src="./img/hauptbild.jpg" alt="Gebratene Nudeln">
+    <div class="info-list">
+        <div class="info-item">
+            <img src="./img/clock-regular.svg" alt="Zeit">
+            <span>30 Min.</span>
+        </div>
+        <div class="info-item">
+            <img src="./img/brain-solid.svg" alt="difuculty">
+            <span>schwer</span>
+        </div>
+        <div class="info-item">
+            <img src="./img/calendar-alt-regular.svg" alt="Datum">
+            <span>07.06.2025</span>
+        </div>
+    </div>
 
-  <div class="info-list">
-      <div class="info-item">
-          <img src="./img/clock-regular.svg" alt="Zeit">
-          <span>30 Min.</span>
-      </div>
-      <div class="info-item">
-          <img src="./img/brain-solid.svg" alt="difuculty">
-          <span>schwer</span>
-      </div>
-      <div class="info-item">
-          <img src="./img/calendar-alt-regular.svg" alt="Datum">
-          <span>07.06.2025</span>
-      </div>
-  </div>
+    <div class="content-container">
+        <div class="form-container">
+            <form id="portionDiv" class="portion-form">
+                <label for="portions">Zutaten für:</label>
+                <input type="number" id="portions" value="1" min="1">
+                <button type="submit" class="portion-form__button">Portionen</button>
+            </form>
+        </div>
 
-  <div class="content-container">
-      <div class="form-container">
-          <form id="portionDiv" class="portion-form">
-              <label for="portions">Zutaten für:</label>
-              <input type="number" id="portions" value="1" min="1">
-              <button type="submit" class="portion-form__button">Portionen</button>
-          </form>
-      </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td id="nudeln">250 g</td>
+                    <td>chinesische Eiernudeln, gekocht</td>
+                </tr>
+                <tr>
+                    <td id="sojasprossen">200 g</td>
+                    <td>Sojasprossen oder Mungobohnenkeimlinge</td>
+                </tr>
+                <tr>
+                    <td id="lauchzwiebel">1 stück</td>
+                    <td>Lauchzwiebel, klein geschnitten</td>
+                </tr>
+                <tr>
+                    <td id="oel">36 ml</td>
+                    <td>Öl</td>
+                </tr>
+                <tr>
+                    <td id="sojasauce">78 g</td>
+                    <td>Sojasauce</td>
+                </tr>
+                <tr>
+                    <td id="sambal">100 g</td>
+                    <td>Sambal Oelek</td>
+                </tr>
+                <tr>
+                    <td id="paprikapulver">20 g</td>
+                    <td>Paprikapulver</td>
+                </tr>
+                <tr>
+                    <td id="currypulver">20 g</td>
+                    <td>Currypulver</td>
+                </tr>
+                <tr>
+                    <td id="chilipulver">10 g</td>
+                    <td>Chilipulver</td>
+                </tr>
+                <tr>
+                    <td id="gefluegelfleisch">200 g </td>
+                    <td>Geflügelfleisch</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-      <table>
-          <tbody>
-              <tr><td id="nudeln">250 g</td><td>chinesische Eiernudeln, gekocht</td></tr>
-              <tr><td id="sojasprossen">200 g</td><td>Sojasprossen oder Mungobohnenkeimlinge</td></tr>
-              <tr><td id="lauchzwiebel">1 stück</td><td>Lauchzwiebel, klein geschnitten</td></tr>
-              <tr><td id="oel">36 ml</td><td>Öl</td></tr>
-              <tr><td id="sojasauce">78 g</td><td>Sojasauce</td></tr>
-              <tr><td id="sambal">100 g</td><td>Sambal Oelek</td></tr>
-              <tr><td id="paprikapulver">20 g</td><td>Paprikapulver</td></tr>
-              <tr><td id="currypulver">20 g</td><td>Currypulver</td></tr>
-              <tr><td id="chilipulver">10 g</td><td>Chilipulver</td></tr>
-              <tr><td id="gefluegelfleisch">200 g</td><td>Geflügelfleisch</td></tr>
-          </tbody>
-      </table>
-  </div>
+    <h2 class="title">Zubereitung</h2>
 
-  <h2 class="title">Zubereitung</h2>
+    <div class="info-list">
+        <div class="info-item">
+            <img src="./img/clock-regular.svg" alt="Zeit">
+            <span>Kochzeit ca.30 Min.</span>
+        </div>
+        <div class="info-item">
+            <img src="./img/clock-regular.svg" alt="Zeit">
+            <span>Servieren sofort</span>
+        </div>
+    </div>
 
-  <div class="info-list">
-      <div class="info-item">
-          <img src="./img/clock-regular.svg" alt="Zeit">
-          <span>Kochzeit ca.30 Min.</span>
-      </div>
-      <div class="info-item">
-          <img src="./img/clock-regular.svg" alt="Zeit">
-          <span>Servieren sofort</span>
-      </div>
-  </div>
+    <div class="instructions">
+        <p>
+            1. Erhitze einen Schuss Öl in einer großen Pfanne oder im Wok.<br>
+            2. Gib das Geflügelfleisch dazu und brate es rundum goldbraun.<br>
+            3. Füge die Lauchzwiebel und Sojasprossen hinzu und röste kurz mit.<br>
+            4. Gib die vorgegarten Eiernudeln in die Pfanne.<br>
+            5. Würze mit Sojasauce, Sambal Oelek, Paprikapulver, Currypulver und Chilipulver nach Geschmack.<br>
+            6. Alles gut vermengen und erhitzen, bis die Nudeln leicht knusprig sind.<br>
+            7. Sofort servieren und nach Belieben mit Frühlingszwiebeln garnieren.
+        </p>
+    </div>
 
-  <div class="instructions">
-      <p>
-          1. Erhitze einen Schuss Öl in einer großen Pfanne oder im Wok.<br>
-          2. Gib das Geflügelfleisch dazu und brate es rundum goldbraun.<br>
-          3. Füge die Lauchzwiebel und Sojasprossen hinzu und röste kurz mit.<br>
-          4. Gib die vorgegarten Eiernudeln in die Pfanne.<br>
-          5. Würze mit Sojasauce, Sambal Oelek, Paprikapulver, Currypulver und Chilipulver nach Geschmack.<br>
-          6. Alles gut vermengen und erhitzen, bis die Nudeln leicht knusprig sind.<br>
-          7. Sofort servieren und nach Belieben mit Frühlingszwiebeln garnieren.
-      </p>
-  </div>
+    <h3 class="section-subtitle">Rezept erstellt von</h3>
+    <div class="profile">
+        <img src="./img/profile.png" class="profile-avatar" alt="Autor">
+        <span class="profile-name">Amin</span>
+    </div>
 
-  <h3 class="section-subtitle">Rezept erstellt von</h3>
-  <div class="profile">
-      <img src="./img/profile.png" class="profile-avatar" alt="Autor">
-      <span class="profile-name">Amin</span>
-  </div>
+    <footer class="site-footer">
+        <img class="footer-img" src="./img/logo.png" alt="logo">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
+            <a href="https://www.tripadvisor.de/"><img src="./img/tripadvisor_logo.png" alt="tripadvisor"></a>
+        </div>
+    </footer>
 
-  <footer class="site-footer">
-      <img class="footer-img" src="./img/logo.png" alt="logo">
-      <div class="social-icons">
-          <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
-          <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
-          <a href="https://www.tripadvisor.de/"><img src="./img/tripadvisor_logo.png" alt="tripadvisor"></a>
-      </div>
-  </footer>
-
-  <script src="./nudeln.js"></script>
-
+    <script src="./nudeln.js"></script>
 </body>
 </html>
+
