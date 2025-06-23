@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,100 +13,138 @@
     <link rel="shortcut icon" href="./img/logo_small.png">
 
 </head>
+
 <body>
-    
+
     <header>
         <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
 
-        <nav class="display-none-header">
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav id="main-nav">
             <a class="navlink" href="./index.html">Start</a>
             <a class="navlink" href="./nudeln.html">Rezept des Tages</a>
             <a class="navlink" href="./kontakt.html">Kontakt</a>
             <a class="navlink" href="./impressum.html">Impressum</a>
         </nav>
     </header>
-   
-         <h2 class="carpaccio">Lachs Carpaccio</h2>
 
-    
+    <h2 class="carpaccio">Lachs Carpaccio</h2>
+
+
     <img class="rezept-img" src="./img/lachs.jpg" alt="lachs-teller">
     <div class="info-row">
         <div class="info-box">
-         <img src="./img/clock-regular.svg" alt="zeit">
-         <span>20 Min.</span>
+            <img src="./img/clock-regular.svg" alt="zeit">
+            <span>20 Min.</span>
         </div>
         <div class="info-box">
-         <img src="./img/brain-solid.svg" alt="">
-         <span>simpel</span>
+            <img src="./img/brain-solid.svg" alt="">
+            <span>simpel</span>
         </div>
         <div class="info-box">
-         <img src="./img/calendar-alt-regular.svg" alt="date">
-         <span>02.06.2025</span>
+            <img src="./img/calendar-alt-regular.svg" alt="date">
+            <span>02.06.2025</span>
         </div>
     </div>
 
-   <div class="container">
-   
-     <div class="header-table">
-          <form id="portionDiv" class="portion-input">
-        
-            <label for="portions">Zutaten für:</label>
-            <input type="number" id="portions" value="4" min="1">
-            <button type="submit" class="portion-button">Portionen</button>
-          </form>
-        
-     </div>
- <table>
-    <tbody>
-       <tr> <td id="lachs">500g</td><td>Lachs, frish (suschiqualität)</td> </tr>
-       <tr> <td id="essig">30 ml</td><td> Essig</td> </tr>
-       <tr> <td id="zitronensaft">30 ml</td><td>Zitronensaft</td> </tr>
-       <tr> <td id="wein">45 ml</td><td> Weißwein</td> </tr>
-       <tr> <td id="oel">4 EL</td><td> ÖL </td> </tr>
-       <tr> <td id="zucker"> 4 g</td><td> Zucker </td> </tr>
-       <tr> <td id="kapern">4 EL</td><td> Kapern, gehackt</td> </tr>
-       <tr> <td></td> <td> Kerbelblättchen</td> </tr>
-       <tr> <td></td> <td> Salz und Pfeffer</td> </tr>
+    <div class="container">
 
-    </tbody>
- </table>    
-   </div>
+        <div class="header-table">
+            <form id="portionDiv" class="portion-input">
 
-   <h2 class="carpaccio">Zubereitung</h2> 
-   <div class="info-row">
-    <div class="info-box">
-     <img src="./img/clock-regular.svg" alt="zeit">
-     <span>Arbeitszeit ca. 20 Min.</span>
-    </div>
-    <div class="info-box">
-        <img src="./img/clock-regular.svg" alt="zeit">
-        <span>Ruhezeit ca. 30 Min.</span>
-       </div>
+                <label for="portions">Zutaten für:</label>
+                <input type="number" id="portions" value="4" min="1">
+                <button type="submit" class="portion-button">Portionen</button>
+            </form>
+
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td id="lachs">500g</td>
+                    <td>Lachs, frish (suschiqualität)</td>
+                </tr>
+                <tr>
+                    <td id="essig">30 ml</td>
+                    <td> Essig</td>
+                </tr>
+                <tr>
+                    <td id="zitronensaft">30 ml</td>
+                    <td>Zitronensaft</td>
+                </tr>
+                <tr>
+                    <td id="wein">45 ml</td>
+                    <td> Weißwein</td>
+                </tr>
+                <tr>
+                    <td id="oel">4 EL</td>
+                    <td> ÖL </td>
+                </tr>
+                <tr>
+                    <td id="zucker"> 4 g</td>
+                    <td> Zucker </td>
+                </tr>
+                <tr>
+                    <td id="kapern">4 EL</td>
+                    <td> Kapern, gehackt</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> Kerbelblättchen</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> Salz und Pfeffer</td>
+                </tr>
+
+            </tbody>
+        </table>
     </div>
 
-   <div class="text-section">
-    <p>Lachs ganz dünn schneiden und rosettenförmig anrichten. Mit Kapern und Kerbelblättchen bestreuen, salzen und pfeffern.
-        Aus Essig, Zitronensaft, Weißwein, Öl und Zucker eine Marinade rühren und über dem Lachs verteilen.
-        Zudecken und 30 Min. ziehen lassen.
-    </p>
-   </div>
-   <h3>Rezept erstellt von</h3>
-   <div class="profile">
-   <img  src="./img/oleg.PNG" class="avatar" alt="photo">
-   <span class="name">Oleg</span>
-   </div>
-  
-    
-    
-<footer class="site-footer">
-    <img class="footer-img" src="./img/logo.png" alt="logo">
-    <div class="social-icons">
-        <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
-        <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
-        <a target="_blank" href="https://x.com/"><img src="./img/x logo.png" alt="twitter"></a>
+    <h2 class="carpaccio">Zubereitung</h2>
+    <div class="info-row">
+        <div class="info-box">
+            <img src="./img/clock-regular.svg" alt="zeit">
+            <span>Arbeitszeit ca. 20 Min.</span>
+        </div>
+        <div class="info-box">
+            <img src="./img/clock-regular.svg" alt="zeit">
+            <span>Ruhezeit ca. 30 Min.</span>
+        </div>
     </div>
-</footer>
-    
+
+    <div class="text-section">
+        <p>Lachs ganz dünn schneiden und rosettenförmig anrichten. Mit Kapern und Kerbelblättchen bestreuen, salzen und
+            pfeffern.
+            Aus Essig, Zitronensaft, Weißwein, Öl und Zucker eine Marinade rühren und über dem Lachs verteilen.
+            Zudecken und 30 Min. ziehen lassen.
+        </p>
+    </div>
+    <h3>Rezept erstellt von</h3>
+    <div class="profile">
+        <img src="./img/oleg.PNG" class="avatar" alt="photo">
+        <span class="name">Oleg</span>
+    </div>
+
+
+
+    <footer class="site-footer">
+        <img class="footer-img" src="./img/logo.png" alt="logo">
+        <div class="social-icons">
+            <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
+            <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
+            <a target="_blank" href="https://x.com/"><img src="./img/x logo.png" alt="twitter"></a>
+        </div>
+    </footer>
+
     <script src="lachs.js"></script>
+    <script src="script-burger-menü.js"></script>
 </body>
+
 </html>

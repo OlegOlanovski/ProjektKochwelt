@@ -14,15 +14,18 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 }
 
 header img {
   width: 200px;
-  
+
 }
+
 .zoom-img {
   transition: transform 0.3s ease;
 }
+
 .zoom-img:hover {
   transform: scale(1.2);
 
@@ -46,13 +49,13 @@ h2 {
   text-underline-offset: 7px;
 }
 
- /* Default (Desktop) */
+/* Default (Desktop) */
 .croissantdiv {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   gap: 32px;
-  padding: 120px 200px 30px 350px ;
+  padding: 120px 200px 30px 350px;
 }
 
 .croissantdiv img {
@@ -91,19 +94,19 @@ h2 {
   text-align: center;
 }
 
- @media (max-width: 1290px)  {
- .croissantdiv {
+@media (max-width: 1290px) {
+  .croissantdiv {
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     align-items: center;
-    padding-right: 50px ;
+    padding-right: 50px;
     padding-left: 50px;
     gap: 24px;
   }
 
   .croissantdiv img {
-    width: 100% ;
-    height: auto ;
+    width: 100%;
+    height: auto;
     max-width: 400px
   }
 
@@ -116,7 +119,7 @@ h2 {
   }
 
   .Rezept-offnen {
-    width: 100% ;
+    width: 100%;
     max-width: 300px;
     margin-top: 20px;
   }
@@ -147,7 +150,7 @@ h2 {
     width: 100%;
     max-width: 300px;
     margin-top: 20px;
-    
+
   }
 }
 
@@ -290,6 +293,31 @@ footer {
   border-radius: 50%;
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: transform 0.3s ease;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -308,10 +336,11 @@ main {
   margin-top: 0;
   font-weight: bold;
 }
+
 /*====================kontaktbox benachrichtigung============================================*/
 #thankYouBox {
   margin-top: 20px;
-  padding:15px 20px;
+  padding: 15px 20px;
   background-color: #d4edda;
   color: #155724;
   border: 1px solid #c3e6cb;
@@ -320,13 +349,14 @@ main {
   opacity: 0;
   transform: translateY(-10px);
   transition: all 0.5s ease;
-  
+
 }
 
 #thankYouBox.show {
   opacity: 1;
   transform: translateX(0%) translateY(-14px);
 }
+
 #thankYouBox.hidden {
   display: none;
 }
@@ -396,6 +426,12 @@ button {
 
 
 @media (max-width: 1024px) {
+
+  header {
+    align-items: center;
+    gap: 10px;
+  }
+
   .want-something-new-grid {
     gap: 30px;
   }
@@ -423,6 +459,84 @@ button {
 
 /* ======================= Responsive: Smartphone ========================== */
 @media (max-width: 675px) {
+
+  header {
+    justify-content: flex-start;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+
+    visibility: hidden;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 225px;
+    background-color: #fff;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+    padding: 60px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+  }
+
+  .hamburger.open {
+
+    z-index: 1000;
+    /* kleiner als nav */
+  }
+
+
+  nav.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff6600;
+  }
+
+  /* Hamburger Animation beim Öffnen */
+  .hamburger.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  /* Optional: Overlay hinter Menü */
+  body.menu-open::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1040;
+  }
+
   .want-something-new-grid {
     flex-direction: column;
     align-items: center;
@@ -606,6 +720,20 @@ h3 {
   font-size: 16px;
   font-weight: bold;
   color: #585050;
+}
+
+body.menu-open::before {
+    z-index: 900;
+    /* kleiner als nav */
+}
+
+nav {
+    z-index: 1050;
+}
+
+nav a {
+    color: #333 !important;
+    /* dunkle Farbe sicherstellen */
 }
 
 
