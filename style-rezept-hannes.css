@@ -326,7 +326,6 @@ button {
 
     header {
         align-items: center;
-        gap: 10px;
     }
 
 
@@ -467,18 +466,12 @@ button {
         display: none;
     }
 
-    .social-icons {
-        gap: 80px;
-    }
 
     .phone-button-div {
         display: flex;
         flex-direction: column;
     }
 
-    .site-footer {
-        margin-top: 50px;
-    }
 
     .button {
         width: 100%;

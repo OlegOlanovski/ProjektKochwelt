@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gebratene Nudeln</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
   <link rel="shortcut icon" href="./img/logo_small.png">
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     @media (min-width: 350px) {
@@ -24,6 +37,20 @@
         color: #000000;
         font-style: bold;
       }
+    }
+
+    .navlink {
+
+      text-decoration: none;
+      margin-left: 16px;
+      color: #606060;
+    }
+
+    .navlink:hover {
+      color: green;
+      text-decoration: underline;
+      text-decoration-thickness: 3px;
+      text-underline-offset: 7px;
     }
 
     .recipe-image {
@@ -124,13 +151,13 @@
     }
 
     .section-subtitle {
-      padding-left: 18%;
+      margin-left: 5%;
     }
 
     .profile-avatar {
       width: 100px;
       height: 100px;
-      padding-left: 18%;
+      margin-left: 5%;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -145,22 +172,6 @@
       font-size: 16px;
       font-weight: bold;
       color: #585050;
-    }
-
-    .main-nav {
-      display: flex;
-      gap: 16px;
-    }
-
-    .main-nav.show {
-      display: flex;
-    }
-
-    .burger-menu {
-      display: none;
-      cursor: pointer;
-      font-size: 20px;
-      color: #333;
     }
 
     footer {
@@ -198,6 +209,7 @@
       top: 0;
       left: 0;
       right: 0;
+      z-index: 1000;
     }
 
     header img {
@@ -230,7 +242,131 @@
       background-color: #ada9a9;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 30px;
+      height: 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1100;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .hamburger .bar {
+      width: 100%;
+      height: 3px;
+      background-color: #333;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 675px) {
+
+      header {
+        justify-content: flex-start;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav {
+
+        visibility: hidden;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 225px;
+        background-color: #fff;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+        padding: 60px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1050;
+      }
+
+      .hamburger.open {
+
+        z-index: 1000;
+        /* kleiner als nav */
+      }
+
+
+      nav.open {
+        transform: translateX(0);
+        visibility: visible;
+      }
+
+      nav a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #ff6600;
+      }
+
+      /* Hamburger Animation beim Öffnen */
+      .hamburger.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      .hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+
+      /* Optional: Overlay hinter Menü */
+      body.menu-open::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1040;
+      }
+    }
+
+    body.menu-open::before {
+      z-index: 900;
+      /* kleiner als nav */
+    }
+
+    nav {
+      z-index: 1050;
+    }
+
+    nav a {
+      color: #333 !important;
+      /* dunkle Farbe sicherstellen */
+    }
+
     @media (min-width: 601px) and (max-width: 1024px) {
+
+      header {
+        align-items: center;
+      }
+
       .title {
         padding-left: 10%;
         margin-top: 150px;
@@ -254,11 +390,6 @@
         padding: 0 10% 0 12%;
       }
 
-      .section-subtitle,
-      .profile-avatar {
-        padding-left: 10%;
-      }
-
       .content-container {
         width: 80%;
         padding: 16px;
@@ -268,9 +399,7 @@
         padding: 10px 20px;
       }
 
-      header img {
-        width: 180px;
-      }
+
 
       footer {
         margin-top: 120px;
@@ -278,10 +407,6 @@
 
       .footer-img {
         width: 200px;
-      }
-
-      .social-icons {
-        gap: 24px;
       }
     }
 
@@ -322,16 +447,6 @@
         padding: 0 5%;
       }
 
-      .section-subtitle,
-      .profile-avatar {
-        padding-left: 5%;
-      }
-
-      .profile {
-        flex-direction: column;
-        padding-left: 5%;
-      }
-
       .profile-avatar {
         width: 80px;
         height: 80px;
@@ -345,283 +460,163 @@
         padding: 8px 12px;
       }
 
-      header img {
-        width: 150px;
-      }
-
       footer {
         flex-direction: column;
-        height: auto;
         margin-top: 80px;
       }
 
-      .social-icons {
-        gap: 16px;
-      }
 
       .footer-img {
         display: none;
       }
+    }
 
-      .main-nav {
-        display: none;
-        flex-direction: column;
-        background-color: white;
-        position: absolute;
-        top: 60px;
-        right: 16px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        border-radius: 8px;
-        gap: 10px;
-      }
-
-      .main-nav.show {
-        display: flex;
-      }
-
-      .burger-menu {
-        display: block;
-      }
+    .social-icons a img {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border-radius: 50%;
     }
   </style>
 </head>
-<body>
-
-  <header>
-    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-    <div class="burger-menu">☰ Menü</div>
-    <nav class="main-nav">
-      <a class="navlink" href="./index.html">Start</a>
-      <a class="navlink" href="#">Rezept des Tages</a>
-      <a class="navlink" href="./kontakt.html">Kontakt</a>
-      <a class="navlink" href="./impressum.html">Impressum</a>
-    </nav>
-  </header>
-
-  <!-- Rest of your content (unchanged) -->
-
-  
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gebratene Nudeln</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-  <link rel="shortcut icon" href="./img/logo_small.png" />
-
-  <style>
-  html, body { margin: 0; padding: 0; }
-
-  .main-nav {
-    display: flex;
-    gap: 16px;
-  }
-
-  .main-nav.show {
-    display: flex;
-  }
-
-  .burger-menu {
-    display: none;
-    cursor: pointer;
-    font-size: 20px;
-    color: #333;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 16px;
-    position: absolute;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  header img {
-    width: 200px;
-  }
-
-  .navlink {
-    text-decoration: none;
-    color: #606060;
-  }
-
-  .navlink:hover {
-    color: green;
-    text-decoration: underline;
-    text-decoration-thickness: 3px;
-    text-underline-offset: 7px;
-  }
-
-  @media (max-width: 600px) {
-    .main-nav {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      flex-direction: column;
-      background-color: white;
-      position: absolute;
-      top: 60px;
-      right: 16px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      padding: 0 10px;
-      border-radius: 8px;
-      gap: 10px;
-    }
-
-    .main-nav.show {
-      max-height: 500px;
-      padding: 10px;
-    }
-
-    .burger-menu {
-      display: block;
-    }
-
-    header img {
-      width: 150px;
-    }
-  }
-</style>
-
-</head>
 
 <body>
   <header>
-    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
-    <div class="burger-menu">☰ Menü</div>
-    <nav class="main-nav">
+    <a href="index.html"><img src="./img/logo.png" class="zoom-img" alt="logo"></a>
+
+    <!-- Hamburger Button -->
+
+    <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+
+    <nav id="main-nav">
       <a class="navlink" href="./index.html">Start</a>
-      <a class="navlink" href="#">Rezept des Tages</a>
+      <a class="navlink" href="./nudeln.html">Rezept des Tages</a>
       <a class="navlink" href="./kontakt.html">Kontakt</a>
       <a class="navlink" href="./impressum.html">Impressum</a>
     </nav>
+
   </header>
 
-    <h2 class="title">Gebratene Nudeln</h2>
-    <img class="recipe-image" src="./img/hauptbild.jpg" alt="Gebratene Nudeln">
+  <h2 class="title">Gebratene Nudeln</h2>
+  <img class="recipe-image" src="./img/hauptbild.jpg" alt="Gebratene Nudeln">
 
-    <div class="info-list">
-        <div class="info-item">
-            <img src="./img/clock-regular.svg" alt="Zeit">
-            <span>30 Min.</span>
-        </div>
-        <div class="info-item">
-            <img src="./img/brain-solid.svg" alt="difuculty">
-            <span>schwer</span>
-        </div>
-        <div class="info-item">
-            <img src="./img/calendar-alt-regular.svg" alt="Datum">
-            <span>07.06.2025</span>
-        </div>
+  <div class="info-list">
+    <div class="info-item">
+      <img src="./img/clock-regular.svg" alt="Zeit">
+      <span>30 Min.</span>
+    </div>
+    <div class="info-item">
+      <img src="./img/brain-solid.svg" alt="difuculty">
+      <span>schwer</span>
+    </div>
+    <div class="info-item">
+      <img src="./img/calendar-alt-regular.svg" alt="Datum">
+      <span>07.06.2025</span>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="form-container">
+      <form id="portionDiv" class="portion-form">
+        <label for="portions">Zutaten für:</label>
+        <input type="number" id="portions" value="1" min="1">
+        <button type="submit" class="portion-form__button">Portionen</button>
+      </form>
     </div>
 
-    <div class="content-container">
-        <div class="form-container">
-            <form id="portionDiv" class="portion-form">
-                <label for="portions">Zutaten für:</label>
-                <input type="number" id="portions" value="1" min="1">
-                <button type="submit" class="portion-form__button">Portionen</button>
-            </form>
-        </div>
+    <table>
+      <tbody>
+        <tr>
+          <td id="nudeln">250 g</td>
+          <td>chinesische Eiernudeln, gekocht</td>
+        </tr>
+        <tr>
+          <td id="sojasprossen">200 g</td>
+          <td>Sojasprossen oder Mungobohnenkeimlinge</td>
+        </tr>
+        <tr>
+          <td id="lauchzwiebel">1 stück</td>
+          <td>Lauchzwiebel, klein geschnitten</td>
+        </tr>
+        <tr>
+          <td id="oel">36 ml</td>
+          <td>Öl</td>
+        </tr>
+        <tr>
+          <td id="sojasauce">78 g</td>
+          <td>Sojasauce</td>
+        </tr>
+        <tr>
+          <td id="sambal">100 g</td>
+          <td>Sambal Oelek</td>
+        </tr>
+        <tr>
+          <td id="paprikapulver">20 g</td>
+          <td>Paprikapulver</td>
+        </tr>
+        <tr>
+          <td id="currypulver">20 g</td>
+          <td>Currypulver</td>
+        </tr>
+        <tr>
+          <td id="chilipulver">10 g</td>
+          <td>Chilipulver</td>
+        </tr>
+        <tr>
+          <td id="gefluegelfleisch">200 g </td>
+          <td>Geflügelfleisch</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-        <table>
-            <tbody>
-                <tr>
-                    <td id="nudeln">250 g</td>
-                    <td>chinesische Eiernudeln, gekocht</td>
-                </tr>
-                <tr>
-                    <td id="sojasprossen">200 g</td>
-                    <td>Sojasprossen oder Mungobohnenkeimlinge</td>
-                </tr>
-                <tr>
-                    <td id="lauchzwiebel">1 stück</td>
-                    <td>Lauchzwiebel, klein geschnitten</td>
-                </tr>
-                <tr>
-                    <td id="oel">36 ml</td>
-                    <td>Öl</td>
-                </tr>
-                <tr>
-                    <td id="sojasauce">78 g</td>
-                    <td>Sojasauce</td>
-                </tr>
-                <tr>
-                    <td id="sambal">100 g</td>
-                    <td>Sambal Oelek</td>
-                </tr>
-                <tr>
-                    <td id="paprikapulver">20 g</td>
-                    <td>Paprikapulver</td>
-                </tr>
-                <tr>
-                    <td id="currypulver">20 g</td>
-                    <td>Currypulver</td>
-                </tr>
-                <tr>
-                    <td id="chilipulver">10 g</td>
-                    <td>Chilipulver</td>
-                </tr>
-                <tr>
-                    <td id="gefluegelfleisch">200 g </td>
-                    <td>Geflügelfleisch</td>
-                </tr>
-            </tbody>
-        </table>
+  <h2 class="title">Zubereitung</h2>
+
+  <div class="info-list">
+    <div class="info-item">
+      <img src="./img/clock-regular.svg" alt="Zeit">
+      <span>Kochzeit ca.30 Min.</span>
     </div>
-
-    <h2 class="title">Zubereitung</h2>
-
-    <div class="info-list">
-        <div class="info-item">
-            <img src="./img/clock-regular.svg" alt="Zeit">
-            <span>Kochzeit ca.30 Min.</span>
-        </div>
-        <div class="info-item">
-            <img src="./img/clock-regular.svg" alt="Zeit">
-            <span>Servieren sofort</span>
-        </div>
+    <div class="info-item">
+      <img src="./img/clock-regular.svg" alt="Zeit">
+      <span>Servieren sofort</span>
     </div>
+  </div>
 
-    <div class="instructions">
-        <p>
-            1. Erhitze einen Schuss Öl in einer großen Pfanne oder im Wok.<br>
-            2. Gib das Geflügelfleisch dazu und brate es rundum goldbraun.<br>
-            3. Füge die Lauchzwiebel und Sojasprossen hinzu und röste kurz mit.<br>
-            4. Gib die vorgegarten Eiernudeln in die Pfanne.<br>
-            5. Würze mit Sojasauce, Sambal Oelek, Paprikapulver, Currypulver und Chilipulver nach Geschmack.<br>
-            6. Alles gut vermengen und erhitzen, bis die Nudeln leicht knusprig sind.<br>
-            7. Sofort servieren und nach Belieben mit Frühlingszwiebeln garnieren.
-        </p>
+  <div class="instructions">
+    <p>
+      1. Erhitze einen Schuss Öl in einer großen Pfanne oder im Wok.<br>
+      2. Gib das Geflügelfleisch dazu und brate es rundum goldbraun.<br>
+      3. Füge die Lauchzwiebel und Sojasprossen hinzu und röste kurz mit.<br>
+      4. Gib die vorgegarten Eiernudeln in die Pfanne.<br>
+      5. Würze mit Sojasauce, Sambal Oelek, Paprikapulver, Currypulver und Chilipulver nach Geschmack.<br>
+      6. Alles gut vermengen und erhitzen, bis die Nudeln leicht knusprig sind.<br>
+      7. Sofort servieren und nach Belieben mit Frühlingszwiebeln garnieren.
+    </p>
+  </div>
+
+  <h3 class="section-subtitle">Rezept erstellt von</h3>
+  <div class="profile">
+    <img src="./img/profile.png" class="profile-avatar" alt="Autor">
+    <span class="profile-name">Amin</span>
+  </div>
+
+  <footer class="site-footer">
+    <img class="footer-img" src="./img/logo.png" alt="logo">
+    <div class="social-icons">
+      <a target="_blank" href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
+      <a target="_blank"  href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
+      <a target="_blank"  href="https://x.com/"><img src="./img/x logo.png" alt="twitter"></a>
     </div>
+  </footer>
 
-    <h3 class="section-subtitle">Rezept erstellt von</h3>
-    <div class="profile">
-        <img src="./img/profile.png" class="profile-avatar" alt="Autor">
-        <span class="profile-name">Amin</span>
-    </div>
-
-    <footer class="site-footer">
-        <img class="footer-img" src="./img/logo.png" alt="logo">
-        <div class="social-icons">
-            <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
-            <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
-            <a href="https://www.tripadvisor.de/"><img src="./img/tripadvisor_logo.png" alt="tripadvisor"></a>
-        </div>
-    </footer>
-
-    <script src="./nudeln.js"></script>
+  <script src="./nudeln.js"></script>
+  <script src="./script-burger-menü.js"></script>
 </body>
-</html>
 
+</html>

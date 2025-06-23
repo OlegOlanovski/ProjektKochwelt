@@ -4,35 +4,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kochwelt - Kontakt</title>
     <link rel="stylesheet" href="style-mainseite.css">
     <link rel="shortcut icon" href="./img/logo_small.png">
-    
+
 </head>
+
 <body>
     <header>
-       <a href="index.html"><img src="./img/logo.png"  class="zoom-img" alt="logo"></a>
+        <a href="index.html"><img src="./img/logo.png" class="zoom-img" alt="logo"></a>
 
-        <nav class="display-none-header">
-         <a class="navlink"  href="./index.html">Start</a>
-         <a class="navlink"  href="./nudeln.html">Rezept des Tages</a>
-         <a class="navlink"  href="#">Kontakt</a>
-         <a class="navlink"  href="./impressum.html">Impressum</a>
+        <!-- Hamburger Button -->
+        <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav id="main-nav">
+            <a class="navlink" href="./index.html">Start</a>
+            <a class="navlink" href="./nudeln.html">Rezept des Tages</a>
+            <a class="navlink" href="#">Kontakt</a>
+            <a class="navlink" href="./impressum.html">Impressum</a>
         </nav>
     </header>
     <main>
-        <div  class="contact-box">
+        <div class="contact-box">
             <div id="thankYouBox" class="hidden">
                 <h2>Vielen Dank für ihre Nachricht!</h2>
                 <p>Wir werden uns so schnell wie möglich bei ihnen melden.</p>
-               
-             </div>
-            
+
+            </div>
+
             <h2>Kontaktiere uns</h2>
-            <form  id="contactForm">
+            <form id="contactForm">
                 <label for="name">Dein Name:</label>
                 <input type="text" id="name" required>
                 <label for="email">Deine E-Mail:</label>
@@ -42,8 +51,8 @@
                 <button type="submit">Abschicken</button>
             </form>
         </div>
-       
-       
+
+
     </main>
 
 
@@ -59,13 +68,17 @@
     <footer class="site-footer">
         <img class="footer-img" src="./img/logo.png" alt="logo">
         <div class="social-icons">
-            <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" class="zoom-img" alt="facebook"></a>
-            <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" class="zoom-img" alt="instagram"></a>
-            <a target="_blank" href="https://x.com/"><img src="./img/x logo.png"  class="zoom-img" alt="twitter"></a>
+            <a href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" class="zoom-img"
+                    alt="facebook"></a>
+            <a href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" class="zoom-img"
+                    alt="instagram"></a>
+            <a target="_blank" href="https://x.com/"><img src="./img/x logo.png" class="zoom-img" alt="twitter"></a>
         </div>
     </footer>
-   
+
     <script src="kontakt.js"></script>
-   
+    <script src="script-burger-menü.js"></script>
+
 </body>
+
 </html>
