@@ -16,6 +16,8 @@
     body {
       margin: 0;
       padding: 0;
+      font-family: "Raleway", sans-serif;
+      max-width: 1920px;
     }
 
     button {
@@ -66,7 +68,7 @@
     .info-list {
       display: flex;
       padding-left: 17%;
-      margin: 20px 0 40px;
+      margin: 20px 0 20px;
     }
 
     .info-item {
@@ -147,17 +149,17 @@
       display: flex;
       justify-content: center;
       text-align: left;
-      padding: 0 15% 0 18%;
+      padding: 0 15% 0 13%;
     }
 
     .section-subtitle {
-      margin-left: 5%;
+      margin-left: 3%;
     }
 
     .profile-avatar {
       width: 100px;
       height: 100px;
-      margin-left: 5%;
+      margin-left: 3%;
       border-radius: 50%;
       object-fit: cover;
     }
@@ -166,6 +168,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
+
     }
 
     .profile-name {
@@ -180,7 +183,7 @@
       justify-content: space-around;
       background-color: grey;
       height: 100px;
-      margin-top: 160px;
+      margin-top: 80px;
     }
 
     .footer-img {
@@ -197,6 +200,10 @@
     .social-icons a img {
       width: 32px;
       height: 32px;
+    }
+
+    .section-profil {
+      padding-left: 16%;
     }
 
     header {
@@ -363,6 +370,10 @@
 
     @media (min-width: 601px) and (max-width: 1024px) {
 
+      .section-profil {
+        padding-left: 7%;
+      }
+
       header {
         align-items: center;
       }
@@ -411,6 +422,11 @@
     }
 
     @media (max-width: 600px) {
+
+      .section-profil {
+        padding-left: 4%;
+      }
+
       .title {
         padding-left: 5%;
         margin-top: 120px;
@@ -600,18 +616,21 @@
     </p>
   </div>
 
-  <h3 class="section-subtitle">Rezept erstellt von</h3>
-  <div class="profile">
-    <img src="./img/profile.png" class="profile-avatar" alt="Autor">
-    <span class="profile-name">Amin</span>
-  </div>
+  <section class="section-profil">
+    <h3 class="section-subtitle">Rezept erstellt von</h3>
+    <div class="profile">
+      <img src="./img/profile.png" class="profile-avatar" alt="Autor">
+      <span class="profile-name">Amin</span>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <img class="footer-img" src="./img/logo.png" alt="logo">
     <div class="social-icons">
-      <a target="_blank" href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png" alt="facebook"></a>
-      <a target="_blank"  href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
-      <a target="_blank"  href="https://x.com/"><img src="./img/x logo.png" alt="twitter"></a>
+      <a target="_blank" href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png"
+          alt="facebook"></a>
+      <a target="_blank" href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
+      <a target="_blank" href="https://x.com/"><img src="./img/x logo.png" alt="twitter"></a>
     </div>
   </footer>
 
