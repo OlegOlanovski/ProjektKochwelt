@@ -1,7 +1,7 @@
 body {
     font-family: "Raleway", sans-serif;
     margin: 0px;
-    max-width: 1920px;
+
 }
 
 @font-face {
@@ -16,6 +16,10 @@ body {
     src: url('./font/Raleway-Regular.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
+}
+
+.container-wrap {
+    max-width: 1920px;
 }
 
 span {
