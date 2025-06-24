@@ -4,6 +4,20 @@ body {
     max-width: 1920px;
 }
 
+@font-face {
+    font-family: 'Raleway';
+    src: url('./font/Raleway-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./font/Raleway-Regular.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
 span {
     font-size: 14px;
     font-weight: 250;
@@ -315,9 +329,7 @@ button {
 }
 
 /* Hamburger sichtbar ab 1030px und kleiner */
-@media (max-width: 1030px) {
-   
-}
+@media (max-width: 1030px) {}
 
 
 
@@ -360,7 +372,7 @@ button {
         justify-content: flex-start;
     }
 
-     .hamburger {
+    .hamburger {
         display: flex;
     }
 
