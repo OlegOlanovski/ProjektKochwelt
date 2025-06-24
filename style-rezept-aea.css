@@ -9,21 +9,25 @@ body {
 }
 
 @font-face {
-    font-family: 'Raleway';
-    src: url('./font/Raleway-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Raleway';
+  src: url('./font/Raleway-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Raleway';
-    src: url('./font/Raleway-Regular.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'Raleway';
+  src: url('./font/Raleway-Regular.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
 }
 
 .container-wrap {
-    max-width: 1920px;
+  max-width: 1920px;
+  margin: 0 auto;
+  /* Zentriert horizontal */
+  padding: 0 20px;
+  /* Optional: etwas Abstand links/rechts */
 }
 
 span,
@@ -251,6 +255,7 @@ footer {
     padding-right: 100px;
   }
 }
+
 /* Basis-Stil für den Button - erstmal ausblenden */
 /* Basis Hamburger-Button: drei Striche */
 .hamburger {
@@ -285,16 +290,16 @@ footer {
   }
 
   nav {
-    
-      visibility: hidden;
-    
+
+    visibility: hidden;
+
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: 225px;
     background-color: #fff;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.15);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
     padding: 60px 20px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -303,15 +308,17 @@ footer {
     transition: transform 0.3s ease;
     z-index: 1050;
   }
+
   .hamburger.open {
-    
-  z-index: 1000; /* kleiner als nav */
-}
+
+    z-index: 1000;
+    /* kleiner als nav */
+  }
 
 
   nav.open {
     transform: translateX(0);
-     visibility: visible;
+    visibility: visible;
   }
 
   nav a {
@@ -330,9 +337,11 @@ footer {
   .hamburger.open .bar:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
+
   .hamburger.open .bar:nth-child(2) {
     opacity: 0;
   }
+
   .hamburger.open .bar:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
@@ -341,7 +350,10 @@ footer {
   body.menu-open::before {
     content: "";
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     z-index: 1040;
   }
@@ -503,7 +515,8 @@ footer {
 
 
 body.menu-open::before {
-  z-index: 900; /* kleiner als nav */
+  z-index: 900;
+  /* kleiner als nav */
 }
 
 nav {
@@ -511,7 +524,6 @@ nav {
 }
 
 nav a {
-  color: #333 !important;  /* dunkle Farbe sicherstellen */
+  color: #333 !important;
+  /* dunkle Farbe sicherstellen */
 }
-
-

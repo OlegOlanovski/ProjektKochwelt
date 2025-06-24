@@ -20,6 +20,10 @@ body {
 
 .container-wrap {
   max-width: 1920px;
+  margin: 0 auto;
+  /* Zentriert horizontal */
+  padding: 0 20px;
+  /* Optional: etwas Abstand links/rechts */
 }
 
 header {
