@@ -19,6 +19,8 @@ function aktualisiereZutaten() {
     let portionen = parseInt(portionenInput.value);
     if (isNaN(portionen) || portionen < 1) {
         portionen = 1;
+    } else if (portionen > 10) {
+        portionen = 10;
     }
     portionenInput.value = portionen;
 
@@ -33,7 +35,7 @@ function aktualisiereZutaten() {
         //     const einheit = item.getAttribute('data-einheit');
         //     const menge = basis * portionen; Vereinfachte version laut mit forEach schleife
 
-        item.textContent = menge + " " + einheit; 
+        item.textContent = menge + " " + einheit;
 
         // let formatiert;
         // if (Number.isInteger(menge)) {
