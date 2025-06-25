@@ -241,7 +241,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 130px;
+  padding-bottom: 80px;
 }
 
 .wok-img-div span {
@@ -598,18 +598,16 @@ button {
 .carpaccio {
   display: flex;
   justify-content: flex-start;
-  padding-left: 18%;
-  margin-top: 200px;
+  margin-top: 110px;
   color: #606060;
 }
 
 .rezept-img {
   display: flex;
   object-fit: cover;
-  width: 64%;
+  width: 100%;
   max-width: 1700px;
   height: 150px;
-  margin: 0 auto;
   border-radius: 10px;
 
 
@@ -617,7 +615,6 @@ button {
 
 .info-row {
   display: flex;
-  padding-left: 17%;
   margin-top: 20px;
   margin-bottom: 40px;
 
@@ -630,7 +627,6 @@ button {
   background-color: #EFEFEF;
   padding: 6px 10px;
   border-radius: 8px;
-  margin-left: 20px;
   font-size: 14px;
 }
 
@@ -641,9 +637,6 @@ button {
 }
 
 .container {
-  max-width: 1650px;
-  width: 64%;
-  margin: 0 auto;
   background: #fff;
   padding: 20px;
 }
@@ -707,18 +700,12 @@ tr:nth-child(odd) td {
   display: flex;
   justify-content: center;
   text-align: left;
-  padding-left: 18%;
   padding-right: 15%;
-}
-
-h3 {
-  padding-left: 18%;
 }
 
 .avatar {
   width: 100px;
   height: 100px;
-  padding-left: 18%;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -727,6 +714,11 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.profile1 {
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
