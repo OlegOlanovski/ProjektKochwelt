@@ -241,7 +241,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 130px;
+  padding-bottom: 80px;
 }
 
 .wok-img-div span {
@@ -598,7 +598,7 @@ button {
 .carpaccio {
   display: flex;
   justify-content: flex-start;
-  margin-top: 200px;
+  margin-top: 110px;
   color: #606060;
 }
 
