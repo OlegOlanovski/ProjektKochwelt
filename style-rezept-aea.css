@@ -270,7 +270,6 @@ footer {
   padding: 0;
   z-index: 1100;
   position: absolute;
-  top: 20px;
   right: 20px;
   transition: transform 0.3s ease;
 }
