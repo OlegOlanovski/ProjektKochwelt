@@ -18,9 +18,6 @@ body {
   font-style: normal;
 }
 
-<<<<<<< HEAD
-
-=======
 .container-wrap {
   max-width: 1920px;
   margin: 0 auto;
@@ -28,7 +25,6 @@ body {
   padding: 0 20px;
   /* Optional: etwas Abstand links/rechts */
 }
->>>>>>> 5bb9b7f1c7b8734b2221fe0464ca410b4e29a880
 
 header {
   display: flex;
@@ -610,12 +606,8 @@ button {
 .rezept-img {
   display: flex;
   object-fit: cover;
-<<<<<<< HEAD
-  width: 64%;
-=======
   width: 100%;
   max-width: 1700px;
->>>>>>> 5bb9b7f1c7b8734b2221fe0464ca410b4e29a880
   height: 150px;
   border-radius: 10px;
 
@@ -646,12 +638,6 @@ button {
 }
 
 .container {
-<<<<<<< HEAD
-  
-  width: 64%;
-  margin: 0 auto;
-=======
->>>>>>> 5bb9b7f1c7b8734b2221fe0464ca410b4e29a880
   background: #fff;
   padding: 20px;
 }
