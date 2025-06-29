@@ -1,21 +1,22 @@
+
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
+
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chocolate Dream Cake</title>
-
-  <!-- Fonts und Styles -->
-  <link rel="stylesheet" href="style-rezept-aea.css">
+  <link rel="stylesheet" href="style-rezept-hannes.css">
   <link rel="shortcut icon" href="./img/logo_small.png">
+
 </head>
 
 <body>
 
-  <!-- Header -->
   <header class="container-wrap">
-    <a href="index.html"><img src="./img/logo.png" alt="Logo"></a>
+    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+
     <!-- Hamburger Button -->
     <button class="hamburger" aria-label="Menü öffnen" aria-expanded="false" aria-controls="main-nav">
       <span class="bar"></span>
@@ -24,151 +25,87 @@
     </button>
 
     <nav id="main-nav">
-      <a class="navlink" href="index.html">Start</a>
+      <a class="navlink" href="./index.html">Start</a>
       <a class="navlink" href="./nudeln.html">Rezept des Tages</a>
-      <a class="navlink" href="kontakt.html">Kontakt</a>
-      <a class="navlink" href="impressum.html">Impressum</a>
-
+      <a class="navlink" href="./kontakt.html">Kontakt</a>
+      <a class="navlink" href="./impressum.html">Impressum</a>
     </nav>
   </header>
 
-  <!-- Rezeptübersicht -->
-  <section class="rezept-header container-wrap">
+
+  <section class="img-section container-wrap">
     <h1>Chocolate Dream Cake</h1>
-    <div class="img-section">
-      <img src="./img/chocolate_dream_cake.jpg" alt="Chocolate Dream Cake">
-    </div>
-    <div class="info-tags">
-      <span>⏱ 60 Min.</span>
-      <span>🥄 simple</span>
-      <span>📅 10.06.2025</span>
+    <img src="./img/chocolate_dream_cake.jpg" alt="Chocolate Dream Cake">
+
+    <div class="informations-schnitzel">
+      <span class="informations-zeit">30 min</span>
+      <span class="informations-kcal">simple</span>
+      <span class="informations-datum">16.06.2025</span>
     </div>
   </section>
 
-  <!-- Zutaten -->
-  <section class="zutaten-section container-wrap">
-    <div class="zutaten-header">
-      <span>Zutaten für</span>
-      <input id="portionen" type="number" value="4" min="1">
-      <button onclick="aktualisiereZutaten()">Portionen</button>
+  <section class="liste-zutaten container-wrap">
+
+    <div class="phone-button-div">
+
+      <div>
+        <span>Zutaten für:</span>
+        <input id="portionen" type="number" value="4" min="1" max="10">
+      </div>
+
+      <button class="button" onclick="aktualisiereZutaten()" type="button">Portionen</button>
+
     </div>
 
-    <ul id="zutaten" class="zutaten-liste grey">
-      <li data-basis="200" data-einheit="g Mehl">200 g Mehl</li>
-      <li data-basis="150" data-einheit="g Zucker">150 g Zucker</li>
-      <li data-basis="100" data-einheit="g Butter">100 g Butter</li>
-      <li data-basis="2" data-einheit="Eier">2 Eier</li>
-      <li data-basis="50" data-einheit="g Kakaopulver">50 g Kakaopulver</li>
-      <li data-basis="1" data-einheit="TL Backpulver">1 TL Backpulver</li>
-      <li data-basis="100" data-einheit="ml Milch">100 ml Milch</li>
-    </ul>
+    <div class="liste-div">
+      <ul id="zutaten" class="liste-ul" style="list-style-type: none;">
+        <li data-basis="200" data-einheit="g Mehl" class="grey">200 g Mehl</li>
+        <li data-basis="150" data-einheit="g Zucker" class="space">150 g Zucker</li>
+        <li data-basis="100" data-einheit="g Butter" class="grey">100 g Butter</li>
+        <li data-basis="2" data-einheit="Eier" class="space">2 Eier</li>
+        <li data-basis="50" data-einheit="g Kakaopulver" class="grey">50 g Kakaopulver</li>
+        <li data-basis="1" data-einheit="TL Backpulver" class="space">1 TL Backpulver</li>
+        <li data-basis="100" data-einheit="ml Milch" class="grey">100 ml Milch</li>
+      </ul>
+    </div>
+
   </section>
 
-  <!-- Zubereitung -->
   <section class="zubereitung-section container-wrap">
     <h2>Zubereitung</h2>
-    <div class="zubereitung-informationen info-tags">
-      <span>⏱ ca. 60 Minuten</span>
-      <span>🧁 Gesamtzeit ca. 60 Minuten</span>
+
+    <div class="zubereitung-informationen">
+      <span class="informations-zeit">ca. 60 min</span>
     </div>
-    <p class="grey">
-      Den Ofen auf 180°C vorheizen. Mehl, Zucker, Butter, Eier, Kakaopulver, Backpulver und Milch in eine Schüssel geben
+
+    <p> Den Ofen auf 180°C vorheizen. Mehl, Zucker, Butter, Eier, Kakaopulver, Backpulver und Milch in eine Schüssel
+      geben
       und gut vermischen. In eine gefettete Kuchenform füllen und ca. 40 Minuten backen. Abkühlen lassen und genießen!
     </p>
+
+
   </section>
 
-  <!-- Autor -->
   <section class="kontakt-section container-wrap">
+    <h3>Rezept erstellt von</h3>
     <div class="kontakt-section-informationen">
-      <img src="./img/profile.png" alt="Profilbild Julia">
-      <div>
-        <h3>Rezept erstellt von</h3>
-        <span>Alaa Eldin Abdalla</span>
-      </div>
+      <img src="./img/profile.png" alt="">
+      <span>Alaa Eldin Abdalla</span>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="container-wrap">
-    <img class="footer-img" src="./img/logo.png" alt="Logo">
+  <footer class="site-footer container-wrap">
+    <img class="footer-img" src="./img/logo.png" alt="logo">
     <div class="social-icons">
-      <a target="_blank" href="https://www.facebook.com/"><img src="./img/facebook_logo.png" alt="Facebook"></a>
-      <a target="_blank" href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="Instagram"></a>
-      <a target="_blank" href="https://x.com/"><img src="./img/x logo.png" alt="X (Twitter)"></a>
+      <a target="_blank" href="https://www.facebook.com/?locale=de_DE"><img src="./img/facebook_logo.png"
+          alt="facebook"></a>
+      <a target="_blank" href="https://www.instagram.com/"><img src="./img/instagrram_logo.png" alt="instagram"></a>
+      <a target="_blank" href="https://x.com/"><img src="./img/x logo.png" alt="twitter"></a>
     </div>
   </footer>
 
-  <!-- Script zur Portionsanpassung -->
-  <script>
-    function aktualisiereZutaten() {
-      const portionenInput = document.getElementById('portionen');
-      let portionen = parseFloat(portionenInput.value.replace(',', '.'));
-
-      // Ungültige Eingabe? => Setze Portionen auf 1
-      if (isNaN(portionen) || portionen < 1) {
-        portionen = 1;
-      }
-
-      // Eingabefeld korrigieren
-      portionenInput.value = portionen;
-
-      const zutaten = document.querySelectorAll('#zutaten li');
-      zutaten.forEach(li => {
-        const basis = parseFloat(li.dataset.basis);
-        const einheit = li.dataset.einheit;
-        const neu = basis * portionen / 4;
-        const formatiert = Number.isInteger(neu) ? neu : neu.toFixed(2).replace('.', ',');
-        li.textContent = `${formatiert} ${einheit}`;
-      });
-    }
-
-    // Enter-Taste: Portionen aktualisieren
-    document.getElementById('portionen').addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') {
-        aktualisiereZutaten();
-      }
-    });
-
-    // Hamburger-Menü-Logik
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.getElementById('main-nav');
-    const body = document.body;
-    let isMenuOpen = false;
-
-    function openMenu() {
-      hamburger.classList.add('open');
-      nav.classList.add('open');
-      body.classList.add('menu-open');
-      hamburger.setAttribute('aria-expanded', 'true');
-      isMenuOpen = true;
-    }
-
-    function closeMenu() {
-      hamburger.classList.remove('open');
-      nav.classList.remove('open');
-      body.classList.remove('menu-open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      isMenuOpen = false;
-    }
-
-    function toggleMenu() {
-      isMenuOpen ? closeMenu() : openMenu();
-    }
-
-    hamburger.addEventListener('click', toggleMenu);
-
-    body.addEventListener('click', e => {
-      if (isMenuOpen && !nav.contains(e.target) && !hamburger.contains(e.target)) {
-        closeMenu();
-      }
-    });
-
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-  </script>
-
-
+  <script src="liste.js"></script>
+  <script src="script-burger-menü.js"></script>
 
 </body>
 
