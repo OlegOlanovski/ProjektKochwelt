@@ -1,0 +1,510 @@
+body {
+    font-family: "Raleway", sans-serif;
+    margin: 0px;
+
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./font/Raleway-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./font/Raleway-Regular.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.container-wrap {
+    max-width: 1920px;
+    margin: 0 auto;
+    /* Zentriert horizontal */
+    padding: 0 125px;
+    /* Optional: etwas Abstand links/rechts */
+}
+
+span {
+    font-size: 14px;
+    font-weight: 250;
+}
+
+p {
+    font-size: 14px;
+
+}
+
+li {
+    font-size: 14px;
+}
+
+button {
+    background-color: #0a7e0c;
+    color: #efefef;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom-color: black;
+
+}
+
+input {
+    padding: 6px;
+    border: 0px;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px;
+    position: absolute;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 200px;
+
+}
+
+.navlink {
+
+    text-decoration: none;
+    margin-left: 16px;
+    color: #606060;
+}
+
+.navlink:hover {
+    color: green;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 7px;
+}
+
+.img-section {
+    padding-bottom: 50px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 110px;
+}
+
+.img-section img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.informations-schnitzel {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.informations-zeit {
+    background-image: url(./img/clock-regular.svg);
+    background-color: #efefef;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+.informations-kcal {
+    background-image: url(./img/brain-solid.svg);
+    background-color: #efefef;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+.informations-datum {
+    background-image: url(./img/calendar-alt-regular.svg);
+    background-color: #efefef;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 20px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+.liste-zutaten {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.liste-ul {
+    padding: 0px;
+}
+
+.grey {
+    background-color: #efefef;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.space {
+    padding: 18px;
+}
+
+.phone-button-div {
+    display: flex;
+    align-items: baseline;
+}
+
+
+
+
+
+
+.zubereitung-section {
+    margin-bottom: 50px;
+}
+
+.zubereitung-section h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.zubereitung-section p {
+    margin: 0px;
+}
+
+.zubereitung-informationen {
+    margin-bottom: 30px;
+}
+
+
+
+
+.kontakt-section {
+    padding-top: 24px;
+    padding-bottom: 80px;
+}
+
+.kontakt-section-informationen {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.kontakt-section img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.kontakt-section span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.kontakt-section h3 {
+
+    font-size: 16px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: grey;
+    height: 100px;
+
+}
+
+.footer-img {
+    width: 250px;
+    height: auto;
+
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+
+}
+
+.social-icons a img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+.contact-box {
+    background-color: rgb(185, 176, 176);
+    padding: 20px 30px;
+    border-radius: 10px;
+    width: 400px;
+
+}
+
+.contact-box h2 {
+    margin-top: 0;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-size: 0.9em;
+}
+
+input,
+textarea {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.impressum-site {
+    margin-top: 230px;
+    margin-left: 10px;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger sichtbar ab 1030px und kleiner */
+@media (max-width: 1030px) {}
+
+
+
+
+@media (max-width: 1024px) {
+
+    header {
+        align-items: center;
+    }
+
+    .container-wrap {
+        padding: 0 75px;
+    }
+
+    .kontakt-section {
+        padding-bottom: 80px;
+    }
+
+
+}
+
+
+
+@media (max-width: 750px) {
+
+    header {
+        justify-content: flex-start;
+    }
+
+    .container-wrap {
+        padding: 0 10px;
+    }
+
+    .kontakt-section-informationen {
+        margin-bottom: 80px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+
+        visibility: hidden;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 225px;
+        background-color: #fff;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+        padding: 60px 20px 20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1050;
+    }
+
+    .hamburger.open {
+
+        z-index: 1000;
+        /* kleiner als nav */
+    }
+
+
+    nav.open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    nav a {
+        color: #333;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: #ff6600;
+    }
+
+    /* Hamburger Animation beim Öffnen */
+    .hamburger.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Optional: Overlay hinter Menü */
+    body.menu-open::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1040;
+    }
+
+    .display-none-header {
+        display: none;
+    }
+
+
+    .img-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .zubereitung-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .kontakt-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .liste-zutaten {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .footer-img {
+        display: none;
+    }
+
+
+    .phone-button-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .button {
+        width: 100%;
+    }
+
+
+}
+
+@media (max-width: 425px) {
+
+    .informations-schnitzel {
+        flex-direction: column;
+    }
+
+
+}
+
+body.menu-open::before {
+    z-index: 900;
+    /* kleiner als nav */
+}
+
+nav {
+    z-index: 1050;
+}
+
+nav a {
+    color: #333 !important;
+    /* dunkle Farbe sicherstellen */
+}
