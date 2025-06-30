@@ -29,14 +29,6 @@ body {
 
 }
 
-main {
-    flex: 1;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 header {
     display: flex;
     justify-content: space-around;
@@ -62,11 +54,41 @@ header img {
 }
 
 h2 {
-    margin-top: 60px;
+    margin-top: 35px;
+}
+
+p {
+    margin-top: 0px;
+}
+
+h1 {
+    margin-bottom: 15px;
 }
 
 .navlink:hover {
     color: green;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 7px;
+}
+
+.impressum-site {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /* padding-right: 1600px; */
+    justify-content: center;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.datenschutz-link {
+    text-decoration: none;
+    color: #000;
+}
+
+.datenschutz-link:hover {
+    color: rgb(255, 255, 255);
     text-decoration: underline;
     text-decoration-thickness: 3px;
     text-underline-offset: 7px;
@@ -94,61 +116,6 @@ h2 {
     background-color: #333;
     border-radius: 2px;
     transition: all 0.3s ease;
-}
-
-
-.contact-box {
-    background-color: rgb(185, 176, 176);
-    padding: 20px 30px;
-    border-radius: 10px;
-    width: 400px;
-
-}
-
-.contact-box h2 {
-    margin-top: 0;
-    font-weight: bold;
-}
-
-/*====================kontaktbox benachrichtigung============================================*/
-#thankYouBox {
-    margin-top: 90px;
-    padding: 15px 20px;
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    border-radius: 5px;
-    font-weight: bold;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.5s ease;
-
-}
-
-#thankYouBox.show {
-    opacity: 1;
-    transform: translateX(0%) translateY(-14px);
-}
-
-#thankYouBox.hidden {
-    display: none;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin: 10px 0 5px;
-    font-size: 0.9em;
-}
-
-input,
-textarea {
-    padding: 8px;
-    border: none;
-    border-radius: 5px;
 }
 
 button {
@@ -179,7 +146,7 @@ footer {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 32px;
 
 }
 
@@ -283,7 +250,21 @@ nav a {
         z-index: 1040;
     }
 
-      .footer-img {
-    display: none;
-  }
+    .footer-img {
+        display: none;
+    }
+}
+
+body.menu-open::before {
+    z-index: 900;
+    /* kleiner als nav */
+}
+
+nav {
+    z-index: 1050;
+}
+
+nav a {
+    color: #333 !important;
+    /* dunkle Farbe sicherstellen */
 }
