@@ -55,14 +55,17 @@ header img {
 
 h2 {
     margin-top: 35px;
+    margin-left: 20px;
 }
 
 p {
     margin-top: 0px;
+    margin-left: 20px;
 }
 
 h1 {
     margin-bottom: 15px;
+    margin-left: 20px;
 }
 
 .navlink:hover {
@@ -76,15 +79,14 @@ h1 {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* padding-right: 1600px; */
     justify-content: center;
     width: 100%;
-    padding-left: 20px;
 }
 
 .datenschutz-link {
     text-decoration: none;
     color: #000;
+    margin-left: 100px;
 }
 
 .datenschutz-link:hover {
@@ -130,7 +132,7 @@ button {
 footer {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: grey;
     height: 100px;
     width: 100%;
@@ -147,6 +149,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 32px;
+    margin-right: 100px;
 
 }
 
@@ -157,24 +160,14 @@ footer {
     border-radius: 50%;
 }
 
-body.menu-open::before {
-    z-index: 900;
-    /* kleiner als nav */
-}
-
-nav {
-    z-index: 1050;
-}
-
-nav a {
-    color: #333 !important;
-    /* dunkle Farbe sicherstellen */
-}
-
 @media (max-width: 675px) {
 
     header {
         justify-content: flex-start;
+    }
+
+    header img {
+        margin-left: 20px;
     }
 
     .hamburger {
@@ -254,6 +247,8 @@ nav a {
         display: none;
     }
 }
+
+
 
 body.menu-open::before {
     z-index: 900;

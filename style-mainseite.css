@@ -51,9 +51,7 @@ header img {
   color: #606060;
 }
 
-h2 {
-  margin-top: 60px;
-}
+
 
 .navlink:hover {
   color: green;
@@ -68,7 +66,7 @@ h2 {
   flex-direction: row;
   align-items: flex-start;
   gap: 32px;
-  padding: 150px 200px 50px 350px;
+  padding: 125px 200px 50px 350px;
 }
 
 .croissantdiv img {
@@ -87,10 +85,6 @@ h2 {
 
 .Französische {
   margin: 0;
-}
-
-.croissant-body {
-  font-weight: 600;
 }
 
 .Rezept-offnen {
@@ -280,7 +274,7 @@ h2 {
 footer {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: grey;
   height: 100px;
   margin-top: 80px;
@@ -290,6 +284,7 @@ footer {
 .footer-img {
   width: 250px;
   height: auto;
+  margin-left: 100px;
 
 }
 
@@ -297,6 +292,7 @@ footer {
   display: flex;
   justify-content: center;
   gap: 32px;
+  margin-right: 100px;
 
 }
 
@@ -368,6 +364,18 @@ footer {
 
   .want-something-new h2 {
     font-size: 22px;
+  }
+
+  .social-icons {
+
+    margin-right: 50px;
+
+  }
+
+  .footer-img {
+
+    margin-left: 50px;
+
   }
 
 
@@ -479,7 +487,7 @@ footer {
   }
 
   .want-something-new h2 {
-    font-size: 20px;
+    font-size: 19px;
     margin-bottom: 50px;
   }
 
@@ -499,11 +507,44 @@ footer {
     display: none;
   }
 
+  footer {
+
+    justify-content: center;
+
+  }
+
   .info-box {
     display: none !important;
   }
 
+    .social-icons {
+
+    margin-right: 0px;
+
+  }
+
+
 }
+
+@media (max-width: 361px) {
+
+  b {
+    font-size: 13px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .pfanne-wok-h2 {
+    font-size: 17px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}
+
 
 
 body.menu-open::before {
