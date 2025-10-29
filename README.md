@@ -18,4 +18,4 @@ HTML5 – Struktur der Webseite
 
 CSS3 – Gestaltung und Layout
 
-JavaScript (Vanilla JS) – Interaktive Funktionen (z. B. Formulare, Navigation, Datenverarbeitung)
+JavaScript – Interaktive Funktionen (z. B. Formulare, Navigation, Datenverarbeitung)
