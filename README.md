@@ -1,3 +1,7 @@
+🍽️ KochWelt
+
+KochWelt ist eine interaktive Rezeptplattform, auf der Benutzer neue Rezepte entdecken und sich registrieren können. Das Projekt wurde mit HTML, CSS und JavaScript umgesetzt.
+
 🚀 Funktionen
 
 🔐 Benutzerregistrierung & Login – Nutzer können sich registrieren und ihr Profil verwalten.
